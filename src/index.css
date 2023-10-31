@@ -3,5 +3,8 @@
 @tailwind utilities;
 
 
-
-  
+.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+    color: red; /* You can customize the color as desired */
+  }

@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 
 import { Link, NavLink } from 'react-router-dom';
+import CustomNavLink from './CustomNavLink';
 
 const navlinks = (
     <>
-        <li className="md:mx-5 " ><NavLink to="/" activeClassName="active">Home</NavLink></li>
-        <li className="md:mx-5"><NavLink to="/add-product" activeClassName="active">Add Product</NavLink></li>
-        <li className="md:mx-5"><NavLink to="/my-cart" activeClassName="active">My Cart</NavLink></li>
+        <li className="md:mx-5"><CustomNavLink to="/" >Home</CustomNavLink></li>
+        <li className="md:mx-5"><CustomNavLink to="/add-product" >Add Product</CustomNavLink></li>
+        <li className="md:mx-5"><CustomNavLink to="/my-cart" >My Cart</CustomNavLink></li>
 
 
 
@@ -34,7 +35,7 @@ const Navbar = () => {
 
     return (
 
-        <div className={`navbar fixed top-0 left-0 w-full z-10 p-0 transition ${scrolled ? 'bg-white' : 'bg-none'}`}>
+        <div className={`navbar fixed top-0 left-0 w-full z-10 p-0 transition ${scrolled ? 'bg-white text-black' : 'bg-none text-white'}`}>
 
             <div className="navbar-start">
                 <div className="dropdown">
