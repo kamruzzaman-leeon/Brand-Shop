@@ -3,8 +3,5 @@
 @tailwind utilities;
 
 
-.active-link {
-    font-weight: bold;
-    text-decoration: underline;
-    color: red; /* You can customize the color as desired */
-  }
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Slab:wght@400;600;700;800&display=swap');

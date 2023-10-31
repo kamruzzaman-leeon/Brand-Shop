@@ -19,7 +19,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 0) {
+            if (window.scrollY > 50) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -37,29 +37,29 @@ const Navbar = () => {
 
         <div className={`navbar fixed top-0 left-0 w-full z-10 p-0 transition ${scrolled ? 'bg-white text-black' : 'bg-none text-white'}`}>
 
-            <div className="navbar-start">
-                <div className="dropdown">
+            <div className="navbar-start justify-between lg:justify-start">
+                <div className="dropdown ">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className={`flex flex-col gap-4 rounded-box dropdown-content mt-3 z-[1] p-4 shadow w-52 ${scrolled ? 'bg-white text-black' : 'bg-none text-white'}`}>
                         {navlinks}
 
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">
-                    {/* Use the logo image here */}
-                    <img src={'/public/logo/brand-shop-icon.png'} alt="Logo" className="w-8 h-8" />
+                <Link to="/" className=" sm:text-center md:ml-8 normal-case text-xl ">
+                    
+                    <img src={'logo/brand-shop-icon.png'} alt="Logo" className="w-12 h-12 bg-white" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="flex flex-row gap-4 lg:gap-8 px-1">
                     {navlinks}
                 </ul>
             </div>
             <div className="navbar-end">
-                <ul className="menu menu-horizontal">
-                    <li className="md:mx-5"><NavLink to="/login">Login</NavLink></li>
+                <ul className="flex flex-col gap-4">
+                    <li className="md:mx-5"><CustomNavLink to="/login">Login</CustomNavLink></li>
                 </ul>
             </div>
         </div>
