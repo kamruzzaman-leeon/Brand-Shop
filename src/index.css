@@ -5,3 +5,21 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Slab:wght@400;600;700;800&display=swap');
+
+/* custom color for font */
+.gradient-text {
+  background-image: linear-gradient(to right, #4f46e5, #8f4fa3, #e44f4f);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-text2 {
+  background-image: linear-gradient(to right, from-green-400, to-blue-500);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-image 0.3s;
+}
+
+.gradient-text2:hover {
+  background-image: linear-gradient(to right, from-pink-500, to-yellow-500);
+}
