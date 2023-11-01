@@ -23,3 +23,9 @@
 .gradient-text2:hover {
   background-image: linear-gradient(to right, from-pink-500, to-yellow-500);
 }
+
+.bg-image{
+
+background-image: url("/scattered-forcefields.png");
+}
+
