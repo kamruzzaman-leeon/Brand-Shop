@@ -5,6 +5,7 @@ import Login from "../page/Login";
 import Register from "../page/Register";
 import AddProduct from "../page/AddProduct";
 import MyCart from "../page/MyCart";
+import NotFound from "../page/NotFound";
 
 const Routers = createBrowserRouter([
     {
@@ -30,7 +31,11 @@ const Routers = createBrowserRouter([
         {
           path:'/my-cart',
           element:<MyCart></MyCart>,
-        }
+        },
+        {
+          path:"*",
+          element:<NotFound></NotFound>,
+      }
       ]
       
     },
