@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 import { Link, NavLink } from 'react-router-dom';
 import CustomNavLink from './CustomNavLink';
+import toast from 'react-hot-toast';
 
 const navlinks = (
     <>
@@ -16,6 +18,21 @@ const navlinks = (
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
+    // console.log(user)
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+
+                toast.success('successfully user logged out!')
+            })
+            .catch(error => {
+                // console.error(error)
+                toast.error('Something wrong here!')
+            })
+
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,7 +65,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/" className=" sm:text-center md:ml-8 normal-case text-xl ">
-                    
+
                     <img src={'logo/brand-shop-icon.png'} alt="Logo" className="w-12 h-12 bg-white" />
                 </Link>
             </div>
@@ -57,11 +74,31 @@ const Navbar = () => {
                     {navlinks}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <ul className="flex flex-col gap-4">
-                    <li className="md:mx-5"><CustomNavLink to="/login">Login</CustomNavLink></li>
-                </ul>
+
+
+            <div className="navbar-end md:mr-8">
+                {
+                    user?.email ?
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost  btn-circle avatar">
+                                <div className="w-10 rounded-full text-black">
+                                    <img src={user?.photoURL} alt={user?.displayName} />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content text-black  bg-base-100 rounded-box w-52">
+
+                                <li className="p-2">{user.displayName}</li>
+                                <li><button onClick={handleLogout}>Logout</button></li>
+
+                            </ul>
+                        </div>
+                        :
+                        <ul className="flex flex-col gap-4">
+                            <li className="md:mx-5"><CustomNavLink to="/login">Login</CustomNavLink></li>
+                        </ul>
+                }
             </div>
+
         </div>
 
     );
