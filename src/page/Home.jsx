@@ -9,6 +9,8 @@ const Home = () => {
                 <title>Home</title>
             </Helmet>
          <Banner></Banner>
+         {/* our Brands */}
+         
         </div>
     );
 };

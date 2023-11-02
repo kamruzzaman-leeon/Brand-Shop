@@ -34,37 +34,40 @@ const Navbar = () => {
 
     }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (window.scrollY > 50) {
+    //             setScrolled(true);
+    //         } else {
+    //             setScrolled(false);
+    //         }
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
+    //     window.addEventListener('scroll', handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
     return (
 
-        <div className={`navbar fixed top-0 left-0 w-full z-10 p-0 transition ${scrolled ? 'bg-white text-black' : 'bg-none text-white'}`}>
-
+        <div className='Container mx-auto px-5'>
+         {/* <div className={`navbar fixed top-0 left-0 w-full z-10 p-0 transition ${scrolled ? 'bg-white text-black' : 'bg-none text-white'}`}> */}
+        <div className={`navbar top-0 left-0 w-full p-0 `}>
+        
             <div className="navbar-start justify-between lg:justify-start">
                 <div className="dropdown ">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className={`flex flex-col gap-4 rounded-box dropdown-content mt-3 z-[1] p-4 shadow w-52 ${scrolled ? 'bg-white text-black' : 'bg-none text-white'}`}>
+                    {/* <ul tabIndex={0} className={`flex flex-col gap-4 rounded-box dropdown-content mt-3 z-[1] p-4 shadow w-52 ${scrolled ? 'bg-white text-black' : 'bg-none text-white'}`}> */}
+                    <ul tabIndex={0} className={`flex flex-col gap-4 rounded-box dropdown-content mt-3 z-[1] p-4 shadow w-52`}>
                         {navlinks}
 
                     </ul>
                 </div>
-                <Link to="/" className=" sm:text-center md:ml-8 normal-case text-xl ">
+                <Link to="/" className=" sm:text-center normal-case text-xl ">
 
                     <img src={'logo/brand-shop-icon.png'} alt="Logo" className="w-12 h-12 bg-white" />
                 </Link>
@@ -76,7 +79,7 @@ const Navbar = () => {
             </div>
 
 
-            <div className="navbar-end md:mr-8">
+            <div className="navbar-end ">
                 {
                     user?.email ?
                         <div className="dropdown dropdown-end">
@@ -100,7 +103,7 @@ const Navbar = () => {
             </div>
 
         </div>
-
+        </div>
     );
 };
 
