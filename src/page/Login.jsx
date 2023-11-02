@@ -43,11 +43,11 @@ const Login = () => {
 
   }
   return (
-    <div className="hero min-h-screen bg-none shadow-md">
+    <div className="hero min-h-screen bg-none shadow-2xl">
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <div className="hero-content flex-col lg:flex-row-reverse text-white">
+      <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
           <h3 className="py-6 text-3xl">Welcome to BrandShop</h3>
@@ -60,13 +60,13 @@ const Login = () => {
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Email</span>
+                <span className="label-text ">Email</span>
               </label>
               <input type="email" placeholder="email" name="email" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Password</span>
+                <span className="label-text ">Password</span>
               </label>
               <input type="password" placeholder="password" name="password" className="input input-bordered" required />
               {/* <label className="label">
@@ -79,7 +79,7 @@ const Login = () => {
             </div>
           </form>
           <div className="label mx-auto mb-2">
-            <p className="label-text-alt text-white"> New Here?</p>
+            <p className="label-text-alt "> New Here?</p>
             <Link to='/register' className="label-text-alt link link-hover text-blue-500 font-bold">Register</Link>
           </div>
           <SocialLogin></SocialLogin>

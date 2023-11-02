@@ -9,8 +9,8 @@ export default {
     },
 
   
-  plugins: [require("daisyui")],
-  daisyui: {
-    themes: ["cupcake", "dark", "cmyk"],
-  },
+    plugins: [require('daisyui')],
+    daisyui: {
+    themes: ['light', 'dark'],
+    },
 }

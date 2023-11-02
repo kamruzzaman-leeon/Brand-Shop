@@ -56,7 +56,7 @@ const Register = () => {
        <Helmet>
         <title>Register</title>
       </Helmet>
-      <div className="hero-content flex-col text-white lg:flex-row-reverse">
+      <div className="hero-content flex-col  lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold mb-4">Register now!</h1>
           <h3 className="text-3xl normal-case">Welcome to the Brand Shop Register Page!</h3>
@@ -67,26 +67,26 @@ const Register = () => {
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Name</span>
+                <span className="label-text ">Name</span>
               </label>
               <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Email</span>
+                <span className="label-text ">Email</span>
               </label>
               <input type="email" placeholder="email" name="email" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Image Url</span>
+                <span className="label-text ">Image Url</span>
               </label>
               <input type="text" placeholder="Image Url" name="img-url" className="input input-bordered" required />
             </div>
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Password</span>
+                <span className="label-text ">Password</span>
               </label>
               <input type="password" placeholder="password" name="password" className="input input-bordered text-slate-500" required />
 
@@ -100,7 +100,7 @@ const Register = () => {
             </div>
           </form>
           <div className="label mx-auto mb-2">
-            <p className="label-text-alt text-white"> Already Have an Account?</p>
+            <p className="label-text-alt "> Already Have an Account?</p>
             <Link to='/login' className="label-text-alt link link-hover text-blue-500 font-bold">Login</Link>
           </div>
         </div>
