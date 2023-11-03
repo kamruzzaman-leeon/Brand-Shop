@@ -1,6 +1,7 @@
 import { Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Button from '../component/Button';
+import { AiFillStar } from 'react-icons/ai';
 
 
 const BrandProducts = () => {
@@ -14,7 +15,7 @@ const BrandProducts = () => {
             icon: 'error',
             title: 'Oops...',
             text: 'No products found!',
-            
+
         });
         return <Navigate state={location.pathname} to="/"></Navigate>
     }
@@ -24,9 +25,9 @@ const BrandProducts = () => {
             <div>slider</div>
             <div>
                 <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
-                   {
-                    brandProducts && brandProducts.length && <h2>{brandProducts[0].brand}</h2>
-                   }
+                    {
+                        brandProducts && brandProducts.length && <h2>{brandProducts[0].brand}</h2>
+                    }
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" data-aos="slide-down">
                     {brandProducts && brandProducts.length && brandProducts.map(brands => (
@@ -45,18 +46,25 @@ const BrandProducts = () => {
                                 />
                             </figure>
                             <div className="card-body">
-                                {/* <p className="">{brands.rating}</p> */}
-                               
-                                <h2 className="text-center">{brands.product}</h2>
-                                <p className="">Brand:{brands.brand}</p>
-                                <p className="">Type: {brands.productType}</p>
-                                <p className="">Price:{brands.price} Taka</p>
-                                <div className='flex justify-evenly'>
-                                <Button>Details</Button>
-                                <Button>Update</Button>
-                            </div>                             
-                            </div>
-                          
+    <h2 className="text-center">{brands.product}</h2>
+    <div className='flex flex-row justify-start '>
+        <p className='flex flex-shrink-0 items-center'>
+            Rating: {brands.rating}
+            <span>
+                <AiFillStar className="text-yellow-500" />
+            </span>
+        </p>
+    </div>
+    <p className="">Brand: {brands.brand}</p>
+    <p className="">Type: {brands.productType}</p>
+    <p className="">Price: {brands.price} Taka</p>
+    <div className='flex justify-evenly'>
+        <Button>Details</Button>
+        <Button>Update</Button>
+    </div>
+</div>
+
+
                         </div>
                     ))}
                 </div>
