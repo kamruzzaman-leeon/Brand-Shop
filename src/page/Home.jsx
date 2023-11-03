@@ -7,7 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
     const brands = useLoaderData()
-    // console.log(brands)
+    console.log(brands)
 
     return (
         <div className=''>
@@ -22,7 +22,7 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="slide-down">
                     {
-                        brands && brands.length && brands.map(brand => <BrandCard brand={brand} key={brand.id}  ></BrandCard>)
+                        brands && brands.length && brands.map(brand => <BrandCard brands={brand} key={brand._id}  ></BrandCard>)
                     }
                 </div>
             </div>

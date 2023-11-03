@@ -1,29 +1,30 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const BrandCard = ({ brand }) => {
-  const { name, image_url } = brand;
+const BrandCard = ({ brands }) => {
+  const { brand, brand_img } = brands;
 
   return (
-    <div className="card w-auto border shadow-xl transform transition-transform hover:scale-105 hover:opacity-80" data-aos="flip-left"
+    <Link to={`/brands/${brand}`} className="card w-auto border shadow-xl transform transition-transform hover:scale-105 hover:opacity-80" data-aos="flip-left"
     data-aos-easing="ease-out-cubic"
     data-aos-duration="1000">
     
       <figure>
         <img
           className="w-full h-48 transform transition-transform hover:scale-105"
-          src={image_url}
-          alt={name}
+          src={brand_img}
+          alt={brand}
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-center">{name}</h2>
+        <h2 className="card-title text-center">{brand}</h2>
       </div>
-    </div>
+   </Link>
   );
 };
 
 BrandCard.propTypes = {
-  brand: PropTypes.object,
+  brands: PropTypes.object,
 };
 
 export default BrandCard;

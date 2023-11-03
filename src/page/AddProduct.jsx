@@ -4,16 +4,37 @@ import Button from '../component/Button';
 const handleAddProduct = e => {
     e.preventDefault();
     const form = e.target;
-    const productName = form.product_name.value;
+    const product = form.product.value;
     const productImageUrl = form.product_image_url.value;
-    const brandName = form.brand_name.value;
+    const brand = form.brand.value;
     const productType = form.product_type.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const description = form.description.value;
 
-    const newProduct ={productName,productImageUrl,brandName,productType,price,rating,description}
+    const newProduct ={product,productImageUrl,brand,productType,price,rating,description}
     console.log(newProduct)
+
+    //send data to the Server
+    fetch('http://localhost:5000/product',{
+        method:'POST',
+        headers:{
+            'content-type':'application/json',
+        },
+        body: JSON.stringify(newProduct)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        if(data.insertedId){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Successfully Product Added!',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+            form.reset()
+        }
+    })
 
 }
 
@@ -26,11 +47,11 @@ const AddProduct = () => {
                 <div className='md:flex mb-8'>
                     <div className="form-control md:w-1/2 mx-4">
                         <label className="label">
-                            <span className="label-text">Product name</span>
+                            <span className="label-text">Product</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" placeholder="Product Name"
-                                name="product_name"
+                            <input type="text" placeholder="Product"
+                                name="product"
                                 className="input input-bordered w-full" required />
                         </label>
                     </div>
@@ -50,11 +71,11 @@ const AddProduct = () => {
                 <div className='md:flex mb-8'>
                     <div className="form-control md:w-1/2 mx-4">
                         <label className="label">
-                            <span className="label-text">Brand Name</span>
+                            <span className="label-text">Brand</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" placeholder="Brand Name"
-                                name="brand_name"
+                            <input type="text" placeholder="Brand"
+                                name="brand"
                                 className="input input-bordered w-full" required />
                         </label>
                     </div>
