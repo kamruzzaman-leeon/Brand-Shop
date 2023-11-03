@@ -1,12 +1,12 @@
 import Swal from 'sweetalert2'
-import Button from '../component/Button';
+
 
 const handleAddProduct = e => {
     e.preventDefault();
     const form = e.target;
     const product = form.product.value;
     const productImageUrl = form.product_image_url.value;
-    const brand = form.brand.value;
+    const brand = form.brand.value.toUpperCase();
     const productType = form.product_type.value;
     const price = form.price.value;
     const rating = form.rating.value;

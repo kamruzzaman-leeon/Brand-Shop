@@ -33,10 +33,15 @@ const Routers = createBrowserRouter([
           // element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>, 
         },
         {
-          path:`/brand-products/`,
-          element:<BrandProducts></BrandProducts>,
-          loader:()=>fetch('http://localhost:5000/product/')
+          path: '/brandproduct/:brand',
+          element: <BrandProducts></BrandProducts>,
+          loader: ({ params }) => {
+            const encodedBrand = encodeURIComponent(params.brand);
+            const url = `http://localhost:5000/product/${encodedBrand}`;
+            return fetch(url);
+          },
         },
+        
         {
           path:'/my-cart',
           element:<MyCart></MyCart>,

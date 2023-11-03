@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CustomNavLink from './CustomNavLink';
 import toast from 'react-hot-toast';
 

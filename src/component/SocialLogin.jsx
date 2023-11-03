@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Button from './Button';
 
@@ -8,7 +8,7 @@ import Button from './Button';
 
 const SocialLogin = () => {
 
-    const {user, googleSignIn} =useContext(AuthContext)
+    const {googleSignIn} =useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 

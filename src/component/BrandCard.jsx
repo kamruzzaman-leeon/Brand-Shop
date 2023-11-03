@@ -5,7 +5,7 @@ const BrandCard = ({ brands }) => {
   const { brand, brand_img } = brands;
 
   return (
-    <Link to={`/brands/${brand}`} className="card w-auto border shadow-xl transform transition-transform hover:scale-105 hover:opacity-80" data-aos="flip-left"
+    <Link to={`/brandproduct/${brand}`} className="card w-auto border shadow-xl transform transition-transform hover:scale-105 hover:opacity-80" data-aos="flip-left"
     data-aos-easing="ease-out-cubic"
     data-aos-duration="1000">
     

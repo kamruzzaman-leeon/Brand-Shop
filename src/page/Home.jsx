@@ -7,7 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
     const brands = useLoaderData()
-    console.log(brands)
+    // console.log(brands)
 
     return (
         <div className=''>
@@ -16,7 +16,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
 
-            <div className='container mx-auto px-5 my-10 '>
+            <div className='container mx-auto p-5 my-10 '>
                 <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
                     Our Brand Product
                 </div>
