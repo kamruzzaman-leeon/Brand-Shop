@@ -28,6 +28,7 @@ const Routers = createBrowserRouter([
         {
           path:'/add-product',
           element:<AddProduct></AddProduct>,
+          // loader: ()=>fetch('http://localhost:5000/brand')
         },
         {
           path:'/my-cart',

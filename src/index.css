@@ -9,9 +9,9 @@
 
 @layer base {
   html {
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Dancing Script', cursive; */
     font-family: 'Edu TAS Beginner', cursive;
-    font-family: 'Roboto Slab', serif;
+    /* font-family: 'Roboto Slab', serif; */
   }
 }
 

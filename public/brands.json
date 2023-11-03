@@ -11,14 +11,15 @@
   },
   {
     "id": 3,
-    "name": "MAC Cosmetics",
-    "image_url": "https://i.ibb.co/7WYBN61/MAC-Cosmetics.jpg"
-  },
-  {
-    "id": 4,
     "name": "Maybelline",
     "image_url": "https://i.ibb.co/zXQwLhR/Maybelline.jpg"
   },
+  {
+    "id": 4,
+    "name": "MAC Cosmetics",
+    "image_url": "https://i.ibb.co/7WYBN61/MAC-Cosmetics.jpg"
+  },
+ 
   {
     "id": 5,
     "name": "Clinique",
