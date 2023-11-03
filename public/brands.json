@@ -1,29 +1,32 @@
-{
-    "brands": [
-      {
-        "name": "L'Oréal",
-        "image_url": "https://i.ibb.co/hYPqqbx/L-Or-al.jpg"
-      },
-      {
-        "name": "Estée Lauder",
-        "image_url": "https://i.ibb.co/Wkds3r9/Est-e-Lauder.jpg"
-      },
-      {
-        "name": "MAC Cosmetics",
-        "image_url": "https://i.ibb.co/7WYBN61/MAC-Cosmetics.jpg"
-      },
-      {
-        "name": "Maybelline",
-        "image_url": "https://i.ibb.co/7WYBN61/MAC-Cosmetics.jpg"
-      },
-      {
-        "name": "Clinique",
-        "image_url": "https://i.ibb.co/6NJNNkK/Clinique.jpg"
-      },
-      {
-        "name": "NARS Cosmetics",
-        "image_url": "https://i.ibb.co/HBmQprs/NARS-Cosmetics.jpg"
-      }
-    ]
+[
+  {
+    "id": 1,
+    "name": "L'Oréal",
+    "image_url": "https://i.ibb.co/hYPqqbx/L-Or-al.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Estée Lauder",
+    "image_url": "https://i.ibb.co/Wkds3r9/Est-e-Lauder.jpg"
+  },
+  {
+    "id": 3,
+    "name": "MAC Cosmetics",
+    "image_url": "https://i.ibb.co/7WYBN61/MAC-Cosmetics.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Maybelline",
+    "image_url": "https://i.ibb.co/zXQwLhR/Maybelline.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Clinique",
+    "image_url": "https://i.ibb.co/6NJNNkK/Clinique.jpg"
+  },
+  {
+    "id": 6,
+    "name": "NARS Cosmetics",
+    "image_url": "https://i.ibb.co/HBmQprs/NARS-Cosmetics.jpg"
   }
-  
+]

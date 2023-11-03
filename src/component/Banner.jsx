@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 import Button from './Button';
 const Banner = () => {
     return (
@@ -8,7 +8,7 @@ const Banner = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Get Glam with Us</h1>
             <p className="mb-5">Start your beauty journey with us - the perfect destination for makeup lovers.</p>
-           <Button>Get Started</Button>
+           <Button>Get Touch</Button>
           </div>
         </div>
       </div>

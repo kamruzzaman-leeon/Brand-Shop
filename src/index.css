@@ -4,7 +4,17 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Slab:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Edu+TAS+Beginner:wght@400;500;600;700&family=Roboto+Slab:wght@400;600;700;800&display=swap');
+
+
+@layer base {
+  html {
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Edu TAS Beginner', cursive;
+    font-family: 'Roboto Slab', serif;
+  }
+}
+
 
 /* custom color for font */
 .gradient-text {
@@ -24,8 +34,7 @@
   background-image: linear-gradient(to right, from-pink-500, to-yellow-500);
 }
 
-.bg-image{
+.bg-image {
 
-background-image: url("/scattered-forcefields.png");
+  background-image: url("/scattered-forcefields.png");
 }
-
