@@ -1,9 +1,10 @@
-import { v4 as uuidv4 } from 'uuid';
+
 import { Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiFillStar } from 'react-icons/ai';
 import MyCart from './MyCart';
 import { useState } from 'react';
+import mongoose from 'mongoose';
 
 
 const ProductDetails = () => {
@@ -12,13 +13,13 @@ const ProductDetails = () => {
   // console.log(productinfo)
   const { _id, product, productImageUrl, brand, productType, price, rating, description } = productinfo
 
-
+  
   //local storage
   const handleAdd = () => {
     // Create an object to represent the item you want to add to the cart
     const cartItem = {
       
-      _id: uuidv4(),
+      _id:  new mongoose.Types.ObjectId(),
       product: product,
       productImageUrl: productImageUrl,
       brand: brand,
