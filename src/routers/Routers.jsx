@@ -8,6 +8,7 @@ import MyCart from "../page/MyCart";
 import NotFound from "../page/NotFound";
 import PrivateRoute from "./PrivateRouter";
 import BrandProducts from "../page/BrandProducts";
+import ProductDetails from "../page/productDetails";
 
 const Routers = createBrowserRouter([
     {
@@ -40,6 +41,11 @@ const Routers = createBrowserRouter([
             const url = `http://localhost:5000/product/${encodedBrand}`;
             return fetch(url);
           },
+        },
+        {
+          path:'/ProductDetails/:id',
+          element:<ProductDetails></ProductDetails>,
+          loader:({params})=>fetch(`http://localhost:5000/productdetails/${params.id}`)
         },
         
         {

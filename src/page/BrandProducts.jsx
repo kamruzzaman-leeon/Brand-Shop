@@ -1,4 +1,4 @@
-import { Navigate, useLoaderData, useLocation } from 'react-router-dom';
+import { Link, Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Button from '../component/Button';
 import { AiFillStar } from 'react-icons/ai';
@@ -6,7 +6,7 @@ import { AiFillStar } from 'react-icons/ai';
 
 const BrandProducts = () => {
     const brandProducts = useLoaderData();
-    console.log(brandProducts);
+    // console.log(brandProducts);
     const location = useLocation()
 
     if (!brandProducts || brandProducts.length === 0) {
@@ -59,7 +59,11 @@ const BrandProducts = () => {
     <p className="">Type: {brands.productType}</p>
     <p className="">Price: {brands.price} Taka</p>
     <div className='flex justify-evenly'>
-        <Button>Details</Button>
+        {/* {
+            console.log(brands._id)
+        } */}
+        <Link to={`/ProductDetails/${brands._id}`}><Button>Details</Button></Link>
+       
         <Button>Update</Button>
     </div>
 </div>
