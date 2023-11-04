@@ -25,7 +25,8 @@
     "react-slick": "^0.29.0",
     "sort-by": "^0.0.2",
     "swal": "^0.1.0",
-    "sweetalert2": "^11.9.0"
+    "sweetalert2": "^11.9.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

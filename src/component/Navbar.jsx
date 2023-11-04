@@ -10,7 +10,7 @@ const navlinks = (
     <>
         <li className="md:mx-5"><CustomNavLink to="/" >Home</CustomNavLink></li>
         <li className="md:mx-5"><CustomNavLink to="/add-product" >Add Product</CustomNavLink></li>
-        <li className="md:mx-5"><CustomNavLink to="/my-cart" >My Cart</CustomNavLink></li>
+        <li className="md:mx-5"><CustomNavLink to="/mycart" >My Cart</CustomNavLink></li>
 
 
 
@@ -85,7 +85,7 @@ const Navbar = () => {
                     </div>
                     <Link to="/" className=" sm:text-center normal-case text-xl ">
 
-                        <img src={'logo/brand-shop-icon.png'} alt="Logo" className="w-12 h-12 bg-white" />
+                        <img src={'https://i.ibb.co/cLKS3GV/brand-shop-icon.png'} alt="Logo" className="w-12 h-12 bg-white" />
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
