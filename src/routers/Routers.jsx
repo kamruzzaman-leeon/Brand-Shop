@@ -31,27 +31,26 @@ const Routers = createBrowserRouter([
         },
         {
           path:'/add-product',
-          element:<AddProduct></AddProduct>,
-          // element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>, 
+          element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>, 
         },
         {
           path: '/brandproduct/:brand',
           element: <BrandProducts></BrandProducts>,
           loader: ({ params }) => {
             const encodedBrand = encodeURIComponent(params.brand);
-            const url = `http://localhost:5000/product/${encodedBrand}`;
+            const url = `http://localhost:5000/productbrand/${encodedBrand}`;
             return fetch(url);
           },
         },
         {
           path:'/ProductDetails/:id',
-          element:<ProductDetails></ProductDetails>,
-          loader:({params})=>fetch(`http://localhost:5000/productdetails/${params.id}`)
+          element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`)
         },
         {
           path:'/ProductUpdate/:id',
-          element:<ProductUpdate></ProductUpdate>,
-          loader:({params})=>fetch(`http://localhost:5000/productdetails/${params.id}`)
+          element:<PrivateRoute><ProductUpdate></ProductUpdate></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`)
         },
         
         {

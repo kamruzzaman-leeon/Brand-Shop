@@ -5,7 +5,7 @@ import { AiFillStar } from 'react-icons/ai';
 
 const ProductDetails = () => {
     const productinfo = useLoaderData()
-    console.log(productinfo)
+    // console.log(productinfo)
     const { product, productImageUrl, brand, productType, price, rating, description } = productinfo
     const location = useLocation()
 
@@ -14,7 +14,7 @@ const ProductDetails = () => {
     }
 
     if (!product || product.length === 0) {
-        // Display an alert using SweetAlert or any other alert library
+        // Display an alert using SweetAlert
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -24,8 +24,8 @@ const ProductDetails = () => {
         return <Navigate state={location.pathname} to="/"></Navigate>
     }
     return (
-        <div className="container mx-auto">
-  <div className="bg-white shadow-lg rounded-lg py-5 w-1/3  mx-auto">
+        <div className="container mx-auto px-5">
+  <div className="bg-white shadow-lg rounded-lg py-5 w-full md:w-1/3  mx-auto">
     <div className="mb-10 relative ">
       <img src={productImageUrl} alt={product} className="w-auto  mx-auto" />
       <div className="absolute bottom-0 w-full p-4 bg-opacity-60 bg-stone-500 mx-auto">

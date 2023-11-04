@@ -38,7 +38,7 @@ const ProductUpdate = () => {
         const updatedProduct = { product, productImageUrl, brand, productType, price, rating, description };
 
         // send data to server
-        fetch(`http://localhost:5000/productdetails/${_id}`, {
+        fetch(`http://localhost:5000/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -60,8 +60,8 @@ const ProductUpdate = () => {
 
 
     return (
-        <div className='shadow-xl p-24 container mx-auto'>
-            <h2 className='text-5xl mb-10 text-center'>Update Product  </h2>
+        <div className='shadow-xl p-5 md:p-24 container mx-auto'>
+            <h2 className='text-2xl md:text-5xl mb-10 text-center'>Update Product  </h2>
             <form onSubmit={handleUpdateProduct}>
                 {/* form product name & img row */}
                 <div className='md:flex mb-8'>

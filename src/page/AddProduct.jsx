@@ -40,9 +40,9 @@ const handleAddProduct = e => {
 
 const AddProduct = () => {
     return (
-        <div className='shadow-xl p-24 container mx-auto'>
-            <h2 className='text-5xl mb-10 text-center'>Add Product</h2>
-            <form onSubmit={handleAddProduct}>
+        <div className='shadow-xl p-5 md:p-24 container mx-auto'>
+            <h2 className='text-2xl md:text-5xl mb-10 text-center'>Add Product</h2>
+            <form onSubmit={handleAddProduct} >
                 {/* form product name & img row */}
                 <div className='md:flex mb-8'>
                     <div className="form-control md:w-1/2 mx-4">
@@ -110,7 +110,7 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <div className="rating rating-lg">
-                                <input type="radio" name="rating" value="0" id="0" className="rating-hidden"/>
+                                <input type="radio" name="rating" value="0" id="0" className="rating-hidden" checked/>
                                 <input type="radio" name="rating" value="1" id="1" className="mask mask-star-2" />
                                 <input type="radio" name="rating" value="2" id="2" className="mask mask-star-2" />
                                 <input type="radio" name="rating" value="3" id="3" className="mask mask-star-2" />

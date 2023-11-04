@@ -10,7 +10,7 @@ const BrandProducts = () => {
     const location = useLocation()
 
     if (!brandProducts || brandProducts.length === 0) {
-       
+
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -46,28 +46,23 @@ const BrandProducts = () => {
                                 />
                             </figure>
                             <div className="card-body">
-    <h2 className="text-center">{brands.product}</h2>
-    <div className='flex flex-row justify-start '>
-        <p className='flex flex-shrink-0 items-center'>
-            Rating: {brands.rating}
-            <span>
-                <AiFillStar className="text-yellow-500" />
-            </span>
-        </p>
-    </div>
-    <p className="">Brand: {brands.brand}</p>
-    <p className="">Type: {brands.productType}</p>
-    <p className="">Price: {brands.price} Taka</p>
-    <div className='flex justify-evenly'>
-        {/* {
-            console.log(brands._id)
-        } */}
-        <Link to={`/ProductDetails/${brands._id}`}><Button>Details</Button></Link>
-        <Link to={`/ProductUpdate/${brands._id}`}><Button>Update</Button></Link>
-       
-        
-    </div>
-</div>
+                                <h2 className="text-center">{brands.product}</h2>
+                                <div className='flex flex-row justify-start '>
+                                    <p className='flex flex-shrink-0 items-center'>
+                                        Rating: {brands.rating}
+                                        <span>
+                                            <AiFillStar className="text-yellow-500" />
+                                        </span>
+                                    </p>
+                                </div>
+                                <p className="">Brand: {brands.brand}</p>
+                                <p className="">Type: {brands.productType}</p>
+                                <p className="">Price: {brands.price} Taka</p>
+                                <div className='flex justify-evenly'>
+                                    <Link to={`/ProductDetails/${brands._id}`}><Button>Details</Button></Link>
+                                    <Link to={`/ProductUpdate/${brands._id}`}><Button>Update</Button></Link>
+                                </div>
+                            </div>
 
 
                         </div>
