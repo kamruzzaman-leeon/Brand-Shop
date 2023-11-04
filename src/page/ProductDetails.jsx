@@ -5,7 +5,7 @@ import { AiFillStar } from 'react-icons/ai';
 
 const ProductDetails = () => {
     const productinfo = useLoaderData()
-    // console.log(productinfo)
+    console.log(productinfo)
     const { product, productImageUrl, brand, productType, price, rating, description } = productinfo
     const location = useLocation()
 

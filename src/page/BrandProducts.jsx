@@ -10,7 +10,7 @@ const BrandProducts = () => {
     const location = useLocation()
 
     if (!brandProducts || brandProducts.length === 0) {
-        // Display an alert using SweetAlert or any other alert library
+       
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -63,8 +63,9 @@ const BrandProducts = () => {
             console.log(brands._id)
         } */}
         <Link to={`/ProductDetails/${brands._id}`}><Button>Details</Button></Link>
+        <Link to={`/ProductUpdate/${brands._id}`}><Button>Update</Button></Link>
        
-        <Button>Update</Button>
+        
     </div>
 </div>
 
