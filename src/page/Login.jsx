@@ -16,32 +16,31 @@ const Login = () => {
   // console.log(location)
   const navigate = useNavigate();
 
-  const handleLogin = e => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    // console.log(e.currentTarget)
-    const form = new FormData(e.currentTarget)
-    const email = form.get('email')
-    const password = form.get('password')
-
+    const form = new FormData(e.currentTarget);
+    const email = form.get('email');
+    const password = form.get('password');
+  
     signIn(email, password)
-      .then(result => {
-        navigate(location?.state ? location.state : "/")
-        // console.log(result.user)
-        toast.success('successfully user logged In!')
-        navigate('/')
+      .then((result) => {
+        navigate(location?.state ? location.state : "/");
+        toast.success('Successfully logged in!');
       })
-      .catch(error => {
-
+      .catch((error) => {
+        console.log('Error:', error); 
         if (error.code === 'auth/wrong-password') {
           toast.error('Incorrect password. Please try again.');
         } else if (error.code === 'auth/user-not-found') {
           toast.error('No user with this email found. Please register or check your email.');
         } else {
+        
           toast.error('An error occurred while trying to log in.');
         }
-      })
-
-  }
+      });
+  };
+  
+  
   return (
     <div className="hero min-h-screen bg-none shadow-2xl">
       <Helmet>

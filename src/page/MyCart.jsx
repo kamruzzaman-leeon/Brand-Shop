@@ -11,7 +11,7 @@ const MyCart = () => {
             title: 'Oops...',
             text: 'No products found in Cart!',
 
-        });
+        })
         return <Navigate state={location.pathname} to="/"></Navigate>
     }
     // Define a function to handle removing items from the cart

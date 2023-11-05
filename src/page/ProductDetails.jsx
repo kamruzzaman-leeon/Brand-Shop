@@ -3,23 +3,22 @@ import { Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiFillStar } from 'react-icons/ai';
 import MyCart from './MyCart';
-import { useState } from 'react';
-import mongoose from 'mongoose';
+import { useContext, useState } from 'react';
 
+import { AuthContext } from "../providers/AuthProvider";
 
 const ProductDetails = () => {
   const productinfo = useLoaderData()
 
   // console.log(productinfo)
-  const { _id, product, productImageUrl, brand, productType, price, rating, description } = productinfo
-
+  const { _id: ID, product, productImageUrl, brand, productType, price, rating, description } = productinfo
+  const {user} = useContext(AuthContext);
   
   //local storage
   const handleAdd = () => {
     // Create an object to represent the item you want to add to the cart
     const cartItem = {
-      
-      _id:  new mongoose.Types.ObjectId(),
+      user:user.displayName,
       product: product,
       productImageUrl: productImageUrl,
       brand: brand,
@@ -28,6 +27,7 @@ const ProductDetails = () => {
       rating: rating,
       description: description
     };
+    console.log(cartItem)
     fetch('http://localhost:5000/mycart', {
       method: 'POST',
       headers: {
@@ -37,7 +37,15 @@ const ProductDetails = () => {
     })
       .then(res => res.json())
       .then(data => {
-        if (data.insertedId) {
+        if(data.error){
+          Swal.fire({
+            title: 'Error!',
+            text: 'Product is already in the cart!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+        }
+        else if (data.insertedId) {
           Swal.fire({
             title: 'Success!',
             text: 'Successfully Product Added to Cart!',
