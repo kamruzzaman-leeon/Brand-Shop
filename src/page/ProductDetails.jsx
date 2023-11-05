@@ -1,5 +1,5 @@
 
-import { Navigate, useLoaderData, useLocation } from 'react-router-dom';
+import { Navigate, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiFillStar } from 'react-icons/ai';
 import MyCart from './MyCart';
@@ -8,14 +8,15 @@ import { useContext, useState } from 'react';
 import { AuthContext } from "../providers/AuthProvider";
 
 const ProductDetails = () => {
-  const productinfo = useLoaderData()
-
+  const productinfo = useLoaderData();
+  const navigate =useNavigate()
   // console.log(productinfo)
-  const { _id: ID, product, productImageUrl, brand, productType, price, rating, description } = productinfo
+  const { _id: ID, product, productImageUrl, brand, productType, price, rating, description } = productinfo;
   const {user} = useContext(AuthContext);
   
   //local storage
   const handleAdd = () => {
+   
     // Create an object to represent the item you want to add to the cart
     const cartItem = {
       user:user.displayName,
@@ -52,7 +53,7 @@ const ProductDetails = () => {
             icon: 'success',
             confirmButtonText: 'Cool'
           })
-          return <Navigate state={location.pathname} to="/mycart"></Navigate>
+          navigate('/mycart')
         }
 
       })

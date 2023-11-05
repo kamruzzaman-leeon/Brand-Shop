@@ -1,9 +1,11 @@
 import { Navigate, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiFillStar } from 'react-icons/ai';
+import { useState } from 'react';
 
 const MyCart = () => {
     const cartItems = useLoaderData();
+    const [citems, setCitems] = useState(cartItems)
     if (!cartItems || cartItems.length === 0) {
 
         Swal.fire({
@@ -16,7 +18,7 @@ const MyCart = () => {
     }
     // Define a function to handle removing items from the cart
     const handleRemove = (itemId) => {
-        console.log(itemId)
+        console.log('Removing item with ID:', itemId);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -28,18 +30,20 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/mycart/${itemId}`,{
-                    method:'DELETE'
+                fetch(`http://localhost:5000/mycart/${itemId}`, {
+                    method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        if (data.deleteCount > 0) {
+                        if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
                                 'Your Product has been deleted.',
                                 'success'
                             )
+                            const remainingItem = citems.filter(citem => citem._id !== itemId)
+                            setCitems(remainingItem);
 
                         }
                     })
@@ -54,7 +58,7 @@ const MyCart = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="slide-down">
                 {
-                    cartItems.map((item) => (
+                    citems.map((item) => (
                         <div key={item._id} className="card w-auto border">
                             <div className="bg-white shadow-lg rounded-lg py-5 w-full h-full mx-auto">
                                 <div className="mb-10 relative">
