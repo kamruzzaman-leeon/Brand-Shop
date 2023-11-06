@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const ProductUpdate = () => {
     const pro = useLoaderData();
+    const location = useLocation()
     const { _id, product, productImageUrl, brand, productType, price, rating, description } = pro;
 
     const [updateProduct, setUpdateProduct] = useState({
@@ -38,7 +39,7 @@ const ProductUpdate = () => {
         const updatedProduct = { product, productImageUrl, brand, productType, price, rating, description };
 
         // send data to server
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://brandshop-server-seven.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

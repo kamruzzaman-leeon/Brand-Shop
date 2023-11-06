@@ -1,10 +1,11 @@
-import { Navigate, useLoaderData } from 'react-router-dom';
+import { Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiFillStar } from 'react-icons/ai';
 import { useState } from 'react';
 
 const MyCart = () => {
     const cartItems = useLoaderData();
+    const location = useLocation()
     const [citems, setCitems] = useState(cartItems)
     if (!cartItems || cartItems.length === 0) {
 
@@ -30,7 +31,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/mycart/${itemId}`, {
+                fetch(`https://brandshop-server-seven.vercel.app/mycart/${itemId}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

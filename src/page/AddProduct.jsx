@@ -16,7 +16,7 @@ const handleAddProduct = e => {
     console.log(newProduct)
 
     //send data to the Server
-    fetch('http://localhost:5000/product',{
+    fetch('https://brandshop-server-seven.vercel.app/product',{
         method:'POST',
         headers:{
             'content-type':'application/json',

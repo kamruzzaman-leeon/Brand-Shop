@@ -9,6 +9,7 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const ProductDetails = () => {
   const productinfo = useLoaderData();
+  // const location = useLocation()
   const navigate =useNavigate()
   // console.log(productinfo)
   const { _id: ID, product, productImageUrl, brand, productType, price, rating, description } = productinfo;
@@ -16,7 +17,7 @@ const ProductDetails = () => {
   
   //local storage
   const handleAdd = () => {
-   
+    
     // Create an object to represent the item you want to add to the cart
     const cartItem = {
       user:user.displayName,
@@ -29,7 +30,7 @@ const ProductDetails = () => {
       description: description
     };
     console.log(cartItem)
-    fetch('http://localhost:5000/mycart', {
+    fetch('https://brandshop-server-seven.vercel.app/mycart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

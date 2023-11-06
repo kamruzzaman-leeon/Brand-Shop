@@ -19,7 +19,7 @@ const Routers = createBrowserRouter([
         {
           path:"/",
           element:<Home></Home>, 
-          loader:() => fetch('http://localhost:5000/brand')       
+          loader:() => fetch('https://brandshop-server-seven.vercel.app/brand')       
         },
         {
           path:'/login',
@@ -38,26 +38,26 @@ const Routers = createBrowserRouter([
           element: <BrandProducts></BrandProducts>,
           loader: ({ params }) => {
             const encodedBrand = encodeURIComponent(params.brand);
-            const url = `http://localhost:5000/productbrand/${encodedBrand}`;
+            const url = `https://brandshop-server-seven.vercel.app/productbrand/${encodedBrand}`;
             return fetch(url);
           },
         },
         {
           path:'/ProductDetails/:id',
           element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`),
+          loader:({params})=>fetch(`https://brandshop-server-seven.vercel.app/product/${params.id}`),
           
         },
         {
           path:'/ProductUpdate/:id',
           element:<PrivateRoute><ProductUpdate></ProductUpdate></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+          loader:({params})=>fetch(`https://brandshop-server-seven.vercel.app/product/${params.id}`)
         },
         
         {
           path:'/mycart',
           element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-          loader:()=>fetch(`http://localhost:5000/mycart`)
+          loader:()=>fetch(`https://brandshop-server-seven.vercel.app/mycart`)
         },
         {
           path:"*",

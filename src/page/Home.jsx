@@ -29,7 +29,7 @@ const Home = () => {
                 <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
                    Customer Review
                 </div>
-                {/* <CustomerReview></CustomerReview> */}
+                <CustomerReview></CustomerReview>
             </div>
 
         </div>
