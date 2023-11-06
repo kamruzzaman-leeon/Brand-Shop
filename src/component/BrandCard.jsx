@@ -18,7 +18,7 @@ const BrandCard = ({ brands }) => {
           alt={brand}
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body ">
         <h2 className="card-title text-center">{brand}</h2>
       </div>
    </Link>
