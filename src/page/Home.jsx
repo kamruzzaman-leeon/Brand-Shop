@@ -7,7 +7,10 @@ import { useLoaderData } from 'react-router-dom';
 import CustomerReview from '../component/CustomerReview';
 
 const Home = () => {
-    const brands = useLoaderData()
+    const data = useLoaderData()
+    // console.log(data)
+    const { brandData: brands, ...res } = data;
+
     // console.log(brands)
 
     return (
@@ -27,7 +30,7 @@ const Home = () => {
                     }
                 </div>
                 <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
-                   Customer Review
+                    Customer Review
                 </div>
                 <CustomerReview></CustomerReview>
             </div>
