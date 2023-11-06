@@ -2,6 +2,7 @@ import { Link, Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Button from '../component/Button';
 import { AiFillStar } from 'react-icons/ai';
+import Slider from '../component/Slider';
 
 
 const BrandProducts = () => {
@@ -22,7 +23,7 @@ const BrandProducts = () => {
 
     return (
         <div className='container mx-auto p-5'>
-            <div>slider</div>
+            <Slider></Slider>
             <div>
                 <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
                     {
@@ -32,7 +33,7 @@ const BrandProducts = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" data-aos="slide-down">
                     {brandProducts && brandProducts.length && brandProducts.map(brands => (
                         <div
-                            className="card w-auto border transform transition-transform hover:scale-105 hover:opacity-80"
+                            className="card w-auto border  transform transition-transform hover:scale-105 hover:opacity-80"
                             data-aos="flip-left"
                             data-aos-easing="ease-out-cubic"
                             data-aos-duration="1000"
@@ -45,8 +46,8 @@ const BrandProducts = () => {
                                     alt={brands.product}
                                 />
                             </figure>
-                            <div className="card-body">
-                                <h2 className="text-center">{brands.product}</h2>
+                            <div className="card-body bg-slate-50 ">
+                                <h2 className="text-center text-indigo-500">{brands.product}</h2>
                                 <div className='flex flex-row justify-start '>
                                     <p className='flex flex-shrink-0 items-center'>
                                         Rating: {brands.rating}

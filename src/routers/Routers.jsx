@@ -23,18 +23,18 @@ const Routers = createBrowserRouter([
           loader: async () => {
             const brandDataPromise = fetch('https://brandshop-server-seven.vercel.app/brand').then((response) => response.json());
             const testimonialDataPromise = fetch('https://brandshop-server-seven.vercel.app/testimonial').then((response) => response.json());
-            const advertisementDataPromise = fetch('https://brandshop-server-seven.vercel.app/advertisement').then((response) => response.json());
+            // const advertisementDataPromise = fetch('https://brandshop-server-seven.vercel.app/advertisement').then((response) => response.json());
         
-            const [brandData, testimonialData, advertisementData] = await Promise.all([
+            const [brandData, testimonialData] = await Promise.all([
               brandDataPromise,
               testimonialDataPromise,
-              advertisementDataPromise,
+             
             ]);
         
             return {
               brandData,
               testimonialData,
-              advertisementData,
+              // advertisementData,
             };
           },     
         },

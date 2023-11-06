@@ -30,8 +30,9 @@ const Home = () => {
                     }
                 </div>
                 <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
-                    Customer Review
+                Customer testimonial
                 </div>
+                <p className='text-center'><i>Reviews represent evaluations of a company, product, or service, that customers write.</i></p>
                 <CustomerReview></CustomerReview>
             </div>
 

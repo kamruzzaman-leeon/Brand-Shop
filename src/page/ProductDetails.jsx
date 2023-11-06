@@ -73,7 +73,7 @@ const ProductDetails = () => {
   }
   return (
     <div className="container mx-auto px-5">
-      <div className="bg-white shadow-lg rounded-lg py-5 w-full md:w-1/3  mx-auto">
+      <div className="bg-slate-50 shadow-lg rounded-lg py-5 w-full md:w-1/3  mx-auto">
         <div className="mb-10 relative ">
           <img src={productImageUrl} alt={product} className="w-auto  mx-auto" />
           <div className="absolute bottom-0 w-full p-4 bg-opacity-60 bg-stone-500 mx-auto">
@@ -91,7 +91,7 @@ const ProductDetails = () => {
         </div>
 
         <div className="text-center p-5">
-          <h2 className="text-xl font-bold mb-2">{product}</h2>
+          <h2 className="text-xl font-bold mb-2 text-indigo-500">{product}</h2>
           <div className="flex flex-row justify-center mb-2">
             <p className="flex items-center">
               Rating: {rating}

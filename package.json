@@ -28,7 +28,7 @@
     "sort-by": "^0.0.2",
     "swal": "^0.1.0",
     "sweetalert2": "^11.9.0",
-    "swiper": "^11.0.3",
+    "swiper": "^10.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

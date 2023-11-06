@@ -61,7 +61,7 @@ const ProductUpdate = () => {
 
 
     return (
-        <div className='shadow-xl p-5 md:p-24 container mx-auto'>
+        <div className='shadow-xl p-5 md:p-24 container mx-auto bg-slate-50'>
             <h2 className='text-2xl md:text-5xl mb-10 text-center'>Update Product  </h2>
             <form onSubmit={handleUpdateProduct}>
                 {/* form product name & img row */}

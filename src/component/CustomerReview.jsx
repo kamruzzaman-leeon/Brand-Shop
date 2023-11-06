@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-
 import PropTypes from 'prop-types';
 import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -48,14 +47,14 @@ const CustomerReview = () => {
         slider.length &&
         slider.map((slide) => (
           <SwiperSlide key={slide._id}>
-            <div className="min-w-screen h-fit flex items-center justify-center px-5 py-24">
-      <div className="flex flex-col h-96 justify-between w-full h- rounded-lg bg-base-100  shadow-lg px-5 pt-5 pb-10 text-gray-800">
+            <div className="min-w-screen  h-fit flex items-center justify-center px-5 py-24">
+      <div className="flex flex-col h-96 justify-between w-full h- rounded-lg bg-slate-50 shadow-lg px-5 pt-5 pb-10 text-gray-800">
         {/* image */}
-        <div className="w-full pt-1 pb-5">
-          <div className="overflow-hidden rounded-full w-28 h-28 -mt-16 mx-auto shadow-lg">
-            <img src={slide.image} alt={slide.name} />
+        
+          <div className="overflow-hidden rounded-full w-32 h-32 -mt-16 mx-auto">
+            <img src={slide.image} alt={slide.name} className="content-cover"/>
           </div>
-        </div>
+       
         <div className="w-full mb-10 ">
           <div className="text-3xl gradient-text text-left leading-tight h-3">“</div>
           <p className="text-sm text-gray-600 text-center px-5">{slide.testimonial}</p>
@@ -63,7 +62,7 @@ const CustomerReview = () => {
         </div>
         <div className="w-full p-5">
           <p className="text-md text-indigo-500 font-bold text-center">{slide.name}</p>
-          <p className="text-xs text-gray-500 text-center">@{slide.name}</p>
+          <p className="text-xs text-gray-500 text-center">@{slide.name.replace(' ', '.').toLowerCase()}</p>
         </div>
       </div>
     </div>
