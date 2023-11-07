@@ -9,46 +9,67 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const googleSignIn = () => {
+    const googleSignIn = async () => {
         setLoading(true)
-        return signInWithPopup(auth, googleProvider);
-    }
+        try {
+            await signInWithPopup(auth, googleProvider);
+          } finally {
+            setLoading(false);
+          }
+    };
 
-    const signIn = (email, password) => {
+    const signIn = async (email, password) => {
         setLoading(true)
-        return signInWithEmailAndPassword(auth, email, password)
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+          } finally {
+            setLoading(false);
+          }
+    };
 
-    }
-
-    const createUser = (email, password) => {
+    const createUser = async (email, password) => {
         setLoading(true)
-        return createUserWithEmailAndPassword(auth, email, password)
+        try{
+            await createUserWithEmailAndPassword(auth,email,password)
+        } finally {
+            setLoading(false);
+        }       
     }
 
-    const handleUpdateProfile = (name,photo)=>{
-        return updateProfile(auth.currentUser,{
-            displayName:name, photoURL:photo
-        })
-    }
+    const handleUpdateProfile = async (name, photo) => {
+        try {
+          setLoading(true);
+          await updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo,
+          });
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    const logOut = () => {
-        return signOut(auth)
-    }
+      const logOut = async () => {
+        setLoading(true);
+        try {
+          await signOut(auth);
+        } finally {
+          setLoading(false);
+        }
+      };
 
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, (user) => {
-            setLoading(false)
-            setUser(user)
-            
-
+        const unSubscribe = onAuthStateChanged(auth, (user) => {           
+            setUser(user);
+            setLoading(false);      
         });
         return () => {
             unSubscribe()
-        }
-    }, [])
+        };
+    }, []);
 
     const authInfo = {
         user,
+        loading,
         createUser,
         signIn,
         logOut,

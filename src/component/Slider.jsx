@@ -63,7 +63,7 @@ const Slider = () => {
                                 <div className="max-w-md mx-auto">
                                     <h1 className="mb-5 text-5xl hover:text-6xl font-extrabold">{slide.title}</h1>
                                     <p className="mb-5">Upto <span className='text-4xl font-bold'>{slide.discount}%</span> Off</p>
-                                    <Button>Get Offer</Button>
+                                    <Button>Shop Now</Button>
                                 </div>
                             </div> 
                         </div>

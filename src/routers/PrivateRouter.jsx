@@ -11,12 +11,14 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
     // console.log(location)
-    if(loading)
-    {
-        return (
-          <h1>loading</h1>
-        )
-    }
+   
+    if (loading) {
+      return (
+          <div className='w-full min-h-screen flex justify-center items-center'>
+              <span className="loading loading-bars loading-lg text-primary"></span>
+          </div>
+      ); // Display a loading indicator while data is being fetched.
+  }
 
     if (!user?.email) {
       Swal.fire({

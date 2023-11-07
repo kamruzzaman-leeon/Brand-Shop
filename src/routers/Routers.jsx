@@ -19,6 +19,7 @@ const Routers = createBrowserRouter([
         {
           path:"/",
           element:<Home></Home>, 
+          
           // loader:() => fetch('https://brandshop-server-seven.vercel.app/brand')  
           loader: async () => {
             const brandDataPromise = fetch('https://brandshop-server-seven.vercel.app/brand').then((response) => response.json());
