@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import toast from 'react-hot-toast';
+
 import Swal from 'sweetalert2';
 
 const PrivateRoute = ({ children }) => {

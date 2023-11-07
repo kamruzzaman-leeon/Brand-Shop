@@ -49,12 +49,10 @@ const AuthProvider = ({ children }) => {
       };
 
       const logOut = async () => {
-        setLoading(true);
-        try {
+        
+      
           await signOut(auth);
-        } finally {
-          setLoading(false);
-        }
+      
       };
 
     useEffect(() => {

@@ -24,9 +24,10 @@ const Login = () => {
   
     signIn(email, password)
             .then(() => {
+              toast.success('Successfully logged in!');
               navigate(location.state && location.state.from ? location.state.from : '/');
 
-                toast.success('Successfully logged in!');
+                
             })
       .catch((error) => {
         console.log('Error:', error); 

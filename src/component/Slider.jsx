@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCube, Autoplay, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
