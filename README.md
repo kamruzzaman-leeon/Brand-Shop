@@ -2,7 +2,6 @@
 
 [Live Project](https://brand-shop-9fa5e.web.app)
 
-[Client Side Repository](https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-kamruzzaman-leeon.git)
 
 BrandShop is a reputable online cosmetics and beauty store based in Bangladesh. We are dedicated to catering to the needs of makeup enthusiasts and skincare aficionados. Our extensive range of products is designed to meet your daily makeup and skincare requirements. Over the years, we have consistently served our valued customers with top-quality, authentic cosmetics, and beauty products.
 
