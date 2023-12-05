@@ -35,13 +35,14 @@ const Home = () => {
                 </div>
                 <p className='text-center'><i>Reviews represent evaluations of a company, product, or service, that customers write.</i></p>
                 <CustomerReview></CustomerReview>
-            </div>
-            <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
+                <div className="divider text-xl md:text-5xl font-bold text-center my-20" data-aos="slide-right">
                 About Us
                 </div>
             <div className='container mx-auto p-5 my-10 '>
                 <AboutUs></AboutUs>
             </div>
+            </div>
+            
 
         </div>
     );

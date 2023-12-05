@@ -60,7 +60,7 @@ BrandShop is a reputable online cosmetics and beauty store based in Bangladesh. 
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-kamruzzaman-leeon.git`
+1. Clone the repository: `https://github.com/kamruzzaman-leeon/Brand-Shop-Client.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 
