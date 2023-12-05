@@ -1,7 +1,7 @@
 # BrandShop - Cosmetics and Beauty Store
 
 [Live Project](https://brand-shop-9fa5e.web.app)
-
+https://github.com/kamruzzaman-leeon/Brand-Shop-Server.git
 
 BrandShop is a reputable online cosmetics and beauty store based in Bangladesh. We are dedicated to catering to the needs of makeup enthusiasts and skincare aficionados. Our extensive range of products is designed to meet your daily makeup and skincare requirements. Over the years, we have consistently served our valued customers with top-quality, authentic cosmetics, and beauty products.
 
@@ -11,6 +11,10 @@ BrandShop is a reputable online cosmetics and beauty store based in Bangladesh. 
 - Firebase
 - Swiper.js
 - Tailwind CSS
+- daisy Ui
+- AOS (Animate on Scroll)
+- Firebase Authentication
+
 
 ## Features
 
@@ -63,6 +67,8 @@ BrandShop is a reputable online cosmetics and beauty store based in Bangladesh. 
 1. Clone the repository: `https://github.com/kamruzzaman-leeon/Brand-Shop-Client.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
+
+**Backend Repository**: [Brand-Shop-Server](https://github.com/kamruzzaman-leeon/Brand-Shop-Server.git)
 
 
 ## Contributing
